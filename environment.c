@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   environment.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: labderra <labderra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jormoral <jormoral@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 11:11:44 by labderra          #+#    #+#             */
-/*   Updated: 2024/10/02 10:12:35 by labderra         ###   ########.fr       */
+/*   Updated: 2024/10/05 17:46:22 by jormoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,26 @@ char	**copy_environmet(char **envp)
 		p = add_str_to_array(envp[i++], p);		
 	return (p);
 }
+
+char ***triple_copy_add(char ***triple)
+{
+	char ***result;
+	int 	i;
+
+	i = 0;
+	while(triple[i])
+		i++;
+	result = ft_calloc(sizeof(char **), i + 2);
+	i = 0;
+	while(triple[i])
+	{
+		result[i] = copy_environmet(triple[i]);
+		i++;
+	}
+	free_dictionary(triple);
+	return(result);
+}
+
 
 char	***copy_split_environment(char **envp)
 {

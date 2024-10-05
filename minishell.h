@@ -6,7 +6,7 @@
 /*   By: jormoral <jormoral@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:04:43 by labderra          #+#    #+#             */
-/*   Updated: 2024/10/04 18:53:50 by jormoral         ###   ########.fr       */
+/*   Updated: 2024/10/05 18:34:16 by jormoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,13 @@ char	***copy_split_environment(char **envp);
 void	apply_redir(t_command *cmd);
 void	revert_redir(t_mini *mini, t_command *cmd);
 
+char	***triple_copy_add(char ***triple);
+
 int 	run_echo(t_mini *mini, t_command *cmd);
 int		run_pwd(t_mini *mini, t_command *cmd);
 int		run_export(t_mini *mini, t_command *cmd);
 int		only_export(t_mini *mini, t_command *cmd);
+void	alpha_export(char ***env);
 int		run_env(t_mini *mini, t_command *cmd);
 int		run_exit(t_mini *mini, t_command *cmd);
 

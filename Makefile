@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: labderra <labderra@student.42.fr>          +#+  +:+       +#+         #
+#    By: jormoral <jormoral@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/30 12:03:18 by labderra          #+#    #+#              #
-#    Updated: 2024/09/30 19:45:15 by labderra         ###   ########.fr        #
+#    Updated: 2024/10/05 17:50:36 by jormoral         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = minishell
-CC = clang -Wall -Werror -Wextra -g #-fsanitize=address
+CC = clang -Wall -Werror -Wextra -g -fsanitize=address
 LIBFT = libft/libft.a
 SRC = main.c \
 lexer.c \

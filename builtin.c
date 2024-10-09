@@ -6,7 +6,7 @@
 /*   By: jormoral <jormoral@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 11:42:34 by jormoral          #+#    #+#             */
-/*   Updated: 2024/10/05 19:35:32 by jormoral         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:38:08 by jormoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,14 +228,14 @@ int	only_export(t_mini *mini, t_command *cmd)
 	apply_redir(cmd);
 	env = mini->envp_dictionary;
 	alpha_export(env);
-	while (env[i])
+	while(env && env[i])
 	{
 		if (!env[i][1])
 			printf("declare -x %s\n", env[i][0]);
 		else
 			printf("declare -x %s=\"%s\"\n", env[i][0], env[i][1]);
 		i++;
-	}
+	} 
 	revert_redir (mini, cmd);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jormoral <jormoral@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:04:43 by labderra          #+#    #+#             */
-/*   Updated: 2024/10/05 18:34:16 by jormoral         ###   ########.fr       */
+/*   Updated: 2024/10/08 21:10:55 by jormoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,14 @@ int		only_export(t_mini *mini, t_command *cmd);
 void	alpha_export(char ***env);
 int		run_env(t_mini *mini, t_command *cmd);
 int		run_exit(t_mini *mini, t_command *cmd);
+int		run_unset(t_mini *mini, t_command *cmd);
+int		run_cd(t_mini *mini, t_command *cmd);
+void	unset_export(t_mini *mini, t_command *cmd);
+void	unset_envp(t_mini *mini, t_command *cmd);
+
+int		ft_len_before_equal(char *s);
+int		search_env(t_mini *mini, char *str);
+void	ok_replace(t_mini *mini, t_command *cmd, int i, int na);
 
 
 #endif

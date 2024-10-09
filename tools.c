@@ -6,7 +6,7 @@
 /*   By: jormoral <jormoral@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:21:28 by labderra          #+#    #+#             */
-/*   Updated: 2024/10/04 13:26:09 by jormoral         ###   ########.fr       */
+/*   Updated: 2024/10/08 16:44:36 by jormoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,16 @@ unsigned long long	ft_atoll(const char *str)
 		str++;
 	}
 	return (sign * acc);
+}
+
+int ft_len_before_equal(char *s)
+{
+	int i;
+
+	i = 0;
+	while(s[i] && s[i] != '=')
+		i++;
+	return(i);
 }
 
 /* 

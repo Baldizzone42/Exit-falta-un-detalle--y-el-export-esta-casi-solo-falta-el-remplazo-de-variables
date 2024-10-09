@@ -6,7 +6,7 @@
 /*   By: jormoral <jormoral@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 11:07:06 by labderra          #+#    #+#             */
-/*   Updated: 2024/10/04 12:14:09 by jormoral         ###   ########.fr       */
+/*   Updated: 2024/10/08 18:21:22 by jormoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,14 +94,14 @@ void	run_command(t_mini *mini, t_command *cmd)
 {
 	if (!ft_strncmp(cmd->arg_array[0], "echo", 4))
 		cmd->exit_status = run_echo(mini, cmd);
-/* 	else if (!ft_strncmp(cmd->arg_array[0], "cd", 2))
-		run_cd(cmd);
- */	else if (!ft_strncmp(cmd->arg_array[0], "pwd", 3))
+ 	else if (!ft_strncmp(cmd->arg_array[0], "cd", 2))
+		cmd->exit_status = run_cd(mini, cmd);
+	else if (!ft_strncmp(cmd->arg_array[0], "pwd", 3))
 		cmd->exit_status = run_pwd(mini, cmd);
  	else if (!ft_strncmp(cmd->arg_array[0], "export", 6))
 		cmd->exit_status = run_export(mini, cmd);
-	/* else if (!ft_strncmp(cmd->arg_array[0], "unset", 5))
-		cmd->exit_status = run_unset(cmd); */
+	else if (!ft_strncmp(cmd->arg_array[0], "unset", 5))
+		cmd->exit_status = run_unset(mini ,cmd);
 	else if (!ft_strncmp(cmd->arg_array[0], "env", 3))
 		cmd->exit_status = run_env(mini, cmd);
 	else if (!ft_strncmp(cmd->arg_array[0], "exit", 4))

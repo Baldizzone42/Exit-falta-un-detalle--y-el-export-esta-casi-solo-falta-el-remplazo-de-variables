@@ -6,7 +6,7 @@
 #    By: jormoral <jormoral@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/30 12:03:18 by labderra          #+#    #+#              #
-#    Updated: 2024/10/05 17:50:36 by jormoral         ###   ########.fr        #
+#    Updated: 2024/10/08 17:38:45 by jormoral         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ parser.c \
 exec.c \
 tools.c \
 environment.c \
-builtin.c
+builtin.c \
+unset.c \
+cd.c \
 
 OBJ = $(SRC:.c=.o)
 
